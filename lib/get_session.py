@@ -1,5 +1,3 @@
-import sys
-
 import requests
 import re
 
@@ -46,13 +44,3 @@ def Login(login_id, password, token_html, token_cookie) -> tuple:
     # assert r_auth_1.headers.get("Location") == "/Home/TwoFactorAuth"
 
 
-def main():
-    id = sys.argv[1]
-    password = sys.argv[2]
-    token_html, token_cookie = GetLoginTokens()
-    ASP_NET_SessionId, api_session_v2 = Login(id, password, token_html, token_cookie)
-    print(ASP_NET_SessionId, api_session_v2)
-
-
-if __name__ == "__main__":
-    main()
